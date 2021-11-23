@@ -1,18 +1,5 @@
-/* =======================================================================
-Template Name: Youtubers
-Author:  SmartEye Technologies
-Author URI: www.smarteyeapps.com
-Version: 1.0
-coder name:Prabin Raja
-Description: This Template is created for Youtubers
-======================================================================= */
-
-/* ===================================== Import Variables ================================== */
 @import 'variable';
-/* ===================================== Basic CSS ==================================== */
 @import 'base/basic_setup';
-
-/* ===================================== Header Design CSS ==================================== */
 
 header {
     background-color: #FFF;
@@ -496,7 +483,7 @@ padding:50px;
 }
 
 
-/* ===================================== Fooer CSS ================================== */
+/* ===================================== Footer CSS ================================== */
 
 .footer{
     @include big-padding();
