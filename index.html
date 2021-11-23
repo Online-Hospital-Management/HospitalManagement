@@ -14,73 +14,13 @@
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="assets/js/header.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-    <header class="container-fluid">
-        <div class="container">
-            <div class="row top-row">
-                <div class="col-md-4 logo">
-                    <img src="assets/images/logo.png" alt="">
-                    <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
-                </div>
-                <div class="col-md-8 navse">
-                    <div class="row">
-                        <div class="col-lg-4 d-none d-lg-block cinfo">
-                            <div class="cdetl">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="detail">
-                                    <b>Location</b>
-                                    <p>Rose Street, Toranto</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
-                            <div class="cdetl">
-                                <div class="icon">
-                                    <i class="far fa-envelope"></i>
-                                </div>
-                                <div class="detail">
-                                    <b>Email</b>
-                                    <p>support@smarteye.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
-                            <div class="cdetl">
-                                <div class="icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="detail">
-                                    <b>Call Us</b>
-                                    <p>+11 7200 20 40 30</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div id="menu-jk" class="nav-sectionmk  row">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About US</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="">Research</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li class="aply">
-                        <button class="btn btn-sm btn-light" onclick="document.location='programare.html'">Book Appointment</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <header-component></header-component>
 
 
-    <!-- ################# Slider Starts Here#######################--->
     <div class="slider">
         <!-- Set up your HTML -->
         <div class="owl-carousel ">
@@ -93,7 +33,7 @@
                             <div class="slider-captions">
                                 <h1 class="slider-title">It's time for better help.</h1>
                                 <p class="slider-text hidden-xs">We can help you conquer a wide range of psychological and emotional problems.</p>
-                                <a href="#" class="btn btn-primary hidden-xs">Schedule A Visit</a>
+                                <a href="programare.html" class="btn btn-primary hidden-xs">Schedule A Visit</a>
                             </div>
                         </div>
                     </div>
@@ -107,7 +47,7 @@
                             <div class="slider-captions">
                                 <h1 class="slider-title">Meet our psychiatrists</h1>
                                 <p class="slider-text hidden-xs">Our psychiatrists are highly skilled to meet your unique needs.</p>
-                                <a href="#" class="btn btn-primary hidden-xs">Meet Psychiatrists</a>
+                                <a href="about.html" class="btn btn-primary hidden-xs">Meet Psychiatrists</a>
                             </div>
                         </div>
                     </div>
@@ -183,8 +123,6 @@
             </div>
         </div>
     </div>
-
-    <!--*************** Our Services Starts Here ***************-->
 
 
     <section class="our-service container-fluid">
@@ -395,49 +333,7 @@
     </div>
 
     <!-- ######## Our Team End ####### -->
-    
-    
-    <!--*************** Our Blog Starts Here ***************-->
-                     
-    <div id="blog" class="container-fluid blog">
-        <div class="container">
-             <div class="session-title">
-                <h2>Our Blog</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin nisi id consequat bibendum. Phasellus at convallis elit. In purus enim, scelerisque id arcu vitae</p>
-            </div>
-                <div class="blog-row row">
-                    <div class="col-lg-4 col-md-6 ">
-                       <div class="blog-col">
-                            <img src="assets/images/services/s1.jpg" alt="">
-                            <span>August 9, 2019</span>
-                            <h4>Orci varius consectetur adipiscing natoque penatibus</h4>
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent accumsan, leo in venenatis dictum, </p>
-                       </div>
-                       
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                       <div class="blog-col">
-                            <img src="assets/images/services/s2.jpg" alt="">
-                            <span>August 9, 2019</span>
-                            <h4>Orci varius consectetur adipiscing natoque penatibus</h4>
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent accumsan, leo in venenatis dictum, </p>
-                       </div>
-                       
-                    </div>
-                     <div class="col-lg-4 col-md-6 ">
-                       <div class="blog-col">
-                            <img src="assets/images/services/service-1.jpg" alt="">
-                            <span>August 9, 2019</span>
-                            <h4>Orci varius consectetur adipiscing natoque penatibus</h4>
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent accumsan, leo in venenatis dictum, </p>
-                       </div>
-                       
-                    </div>
-                     
-            </div>
-        </div>
-        
-    </div>  
+
     
         <!-- ################# Footer Starts Here#######################--->
 
@@ -481,7 +377,6 @@
     </footer>
     <div class="copy">
             <div class="container">
-                <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
                 
                 <span>
                 <a><i class="fab fa-github"></i></a>
