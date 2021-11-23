@@ -591,36 +591,7 @@ header {
       margin: 0px;
       margin-top: 10px; }
 
-/* =================== Blog Style Starts Here =================== */
-.blog {
-  background-color: #f7f7f7;
-  padding: 50px; }
-  @media screen and (max-width: 940px) {
-    .blog {
-      padding: 30px 10px; } }
-  .blog .blog-row .blog-col {
-    background-color: #fff;
-    padding: 15px;
-    box-shadow: 0 2px 3px 0 rgba(218, 218, 253, 0.35), 0 0px 3px 0 rgba(206, 206, 238, 0.35);
-    margin-bottom: 30px; }
-    .blog .blog-row .blog-col img {
-      margin-bottom: 20px;
-      width: 100%; }
-    .blog .blog-row .blog-col span {
-      color: #a09f9f;
-      font-size: .83rem; }
-    .blog .blog-row .blog-col h4 {
-      margin-top: 15px;
-      font-weight: 400;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      line-height: 26px; }
-    .blog .blog-row .blog-col p {
-      font-weight: 500;
-      font-size: .9rem;
-      line-height: 25px; }
-
-/* ===================================== Fooer CSS ================================== */
+/* ===================================== Footer CSS ================================== */
 .footer {
   padding: 50px;
   padding-bottom: 0px;
