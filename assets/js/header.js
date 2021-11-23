@@ -5,7 +5,7 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <div class="container-fluid">
+    <header class="container-fluid">
         <div class="container">
             <div class="row top-row">
                 <div class="col-md-4 logo">
@@ -64,7 +64,7 @@ class Header extends HTMLElement {
                 </ul>
             </div>
         </div>
-    </div>
+    </header>
     `;
   }
 }
