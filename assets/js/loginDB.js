@@ -8,8 +8,8 @@ var path = require('path');
 var connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : '',
-	database : 'nodelogin'
+	password : 'root',
+	database : 'accounts'
 });
 
 var app = express();
@@ -33,7 +33,7 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/home');
+				response.redirect('/index.html');
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}			
