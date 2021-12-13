@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Form</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/cssLogin.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
 	<img class="wave" src="assets/images/wave.png">
 	<div class="container">
@@ -15,7 +14,7 @@
 			<!-- <img src="assets/images/bg.svg"> -->
 		</div>
 		<div class="login-content">
-			<form action="auth" method="POST">
+			<form action="/" method="POST">
 				<img src="assets/images/avatar.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -28,7 +27,7 @@
            		   </div>
            		</div>
            		<div class="input-div pass">
-           		   <div class="i"> 
+           		   <div class="i">  
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
@@ -36,11 +35,11 @@
            		    	<input type="password" name="password" class="input" >
             	   </div>
             	</div>
+            	<a href="#">Forgot Password?</a>
             	<input type="submit" class="btn" value="Login">
             </form>
         </div>
     </div>
     <script type="text/javascript" src="assets/js/login.js"></script>
-    <script type="text/javascript" src="assets/js/loginDB.js"></script>
 </body>
 </html>
