@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
     host     : 'localhost',
 	user     : 'root',
 	password : 'password',
-	database : 'hospital_login'
+	database : 'tw_project'
 });
 
 connection.connect(function(error){
@@ -27,7 +27,7 @@ app.post("/",encoder, function(req,res){
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
+    connection.query("select * from accounts where username = ? and password = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
             res.redirect("/home");
         } else {
