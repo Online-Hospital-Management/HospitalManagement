@@ -53,11 +53,11 @@ class Header extends HTMLElement {
             </div>
             <div id="menu-jk" class="nav-sectionmk  row">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About US</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="appointments.html">Appointments</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About US</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="appointments">Appointments</a></li>
+                    <li><a href="contact_us">Contact Us</a></li>
                     <li class="aply">
                         <button class="btn btn-sm btn-light" onClick="document.location='programare.html'">Book Appointment</button>
                         <button class="btn btn-sm btn-light" onClick="document.location='login.html'">Log In</button>

@@ -15,8 +15,8 @@ class Footer extends HTMLElement {
                 <div class="col-md-4 col-sm-12">
                     <h2>Useful Links</h2>
                     <ul class="list-unstyled link-list">
-                        <li><a ui-sref="about" href="about.html">About us</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="contact" href="contact_us.html">Contact us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="about" href="about">About us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="contact" href="contact_us">Contact us</a><i class="fa fa-angle-right"></i></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12 map-img">

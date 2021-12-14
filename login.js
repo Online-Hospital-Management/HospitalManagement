@@ -29,7 +29,7 @@ app.post("/",encoder, function(req,res){
 
     connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
-            res.redirect("/index.html");
+            res.redirect("/home");
         } else {
             res.redirect("/");
 
@@ -38,8 +38,29 @@ app.post("/",encoder, function(req,res){
     })
 })
 
-app.get("/index.html", function(req, res){
+app.get("/home", function(req, res){
     res.sendFile(__dirname + "/index.html");
+})
+app.get("/about", function(req, res){
+    res.sendFile(__dirname + "/about.html");
+})
+app.get("/services", function(req, res){
+    res.sendFile(__dirname + "/services.html");
+})
+app.get("/appointments", function(req, res){
+    res.sendFile(__dirname + "/appointments.html");
+})
+app.get("/contact_us", function(req, res){
+    res.sendFile(__dirname + "/contact_us.html");
+})
+app.get("/programare.html", function(req, res){
+    res.sendFile(__dirname + "/programare.html");
+})
+app.get("/programare", function(req, res){
+    res.sendFile(__dirname + "/programare.html");
+})
+app.get("/login.html", function(req, res){
+    res.sendFile(__dirname + "/login.html");
 })
 
 app.listen(4000);
