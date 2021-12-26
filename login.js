@@ -6,6 +6,8 @@ const encoder = bodyParser.urlencoded();
 const app = express();
 app.use("/assets",express.static("assets"));
 
+var IsLogged = false;
+
 const connection = mysql.createConnection({
     host     : 'localhost',
 	user     : 'root',
@@ -20,7 +22,7 @@ connection.connect(function(error){
 
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/login.html");
+    res.sendFile(__dirname + "/index.html");
 })
 
 app.post("/",encoder, function(req,res){
@@ -30,6 +32,7 @@ app.post("/",encoder, function(req,res){
     connection.query("select * from accounts where username = ? and password = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
             res.redirect("/home");
+            IsLogged = true;
         } else {
             res.redirect("/");
 
@@ -39,7 +42,11 @@ app.post("/",encoder, function(req,res){
 })
 
 app.get("/home", function(req, res){
-    res.sendFile(__dirname + "/index.html");
+    if(IsLogged == true){
+        res.sendFile(__dirname + "/index2.html");
+    } else{
+        res.sendFile(__dirname + "/index.html");
+    }
 })
 app.get("/about", function(req, res){
     res.sendFile(__dirname + "/about.html");
