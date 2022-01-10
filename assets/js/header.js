@@ -60,7 +60,7 @@ class Header extends HTMLElement {
                     <li><a href="contact_us">Contact Us</a></li>
                     <li class="aply">
                         <button class="btn btn-sm btn-light" onClick="document.location='programare.html'">Book Appointment</button>
-                        <button class="btn btn-sm btn-light" onClick="document.location='login.html'">Log Out</button>
+                        <button class="btn btn-sm btn-light" onClick="document.location='login.html'">Log In</button>
 
                     </li>
                 </ul>
