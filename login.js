@@ -10,6 +10,8 @@ app.use("/assets",express.static("assets"));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
+var IsLogged = false;
+
 const connection = mysql.createConnection({
     host     : 'localhost',
 	user     : 'root',
@@ -34,6 +36,7 @@ app.post("/",encoder, function(req,res){
     connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
             res.redirect("/home");
+            IsLogged = true;
         } else {
             res.redirect("/");
 
@@ -43,7 +46,11 @@ app.post("/",encoder, function(req,res){
 })
 
 app.get("/home", function(req, res){
-    res.sendFile(__dirname + "/index.html");
+    if(IsLogged == true){
+        res.sendFile(__dirname + "/index2.html");
+    } else{
+        res.sendFile(__dirname + "/index.html");
+    }
 })
 app.get("/about", function(req, res){
     res.sendFile(__dirname + "/about.html");
