@@ -86,6 +86,9 @@ app.get("/programare", function(req, res){
 app.get("/login.html", function(req, res){
     res.sendFile(__dirname + "/login.html");
 })
+app.get("/index.html", function(req, res){
+    res.sendFile(__dirname + "/index.html");
+})
 
 app.listen(4000);
 module.exports = connection;
