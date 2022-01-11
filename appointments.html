@@ -22,8 +22,49 @@
 
 <body>
     <header-component></header-component>
+    <div class="page-nav row">
+        <div class="container">
+            <div class="row">
+                <h2>Contact US</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Appointments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <!---->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">date</th>
+            <th width="200px">Email</th>         
+          </tr>
+        </thead>
+        <tbody>
+          <% if(data.length){
+         
+          for(var i = 0; i< data.length; i++) {%>  
+          <tr>
+            <th scope="row"><%= (i+1) %></th>
+            <td><%= data[i].name%></td>
+            <td><%= data[i].email%></td>
+            <td>
+            <a class="btn btn-success edit" href="../users/edit/<%=data[i].id%>">Edit</a>                                            
+           </td>
+          </tr>
+          <% }
+                   
+           }else{ %>
+               <tr>
+                  <td colspan="3">No user</td>
+               </tr>
+            <% } %>    
+          
+        </tbody>
+        </table>
 </body>
 
 
@@ -36,3 +77,4 @@
 <script src="assets/js/script.js"></script>
 
 </html>
+

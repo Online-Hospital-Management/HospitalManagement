@@ -8,7 +8,7 @@
     <title>Hospital Management</title>
 
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
-   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -29,7 +29,7 @@
 
 <body>  
     <header-component></header-component> 
-
+    <form method="POST">
         <div class="inner-layer">
             <div class="container">
               <div class="row no-margin">
@@ -47,39 +47,21 @@
                           </div>
                           <div class="form-body">
                               <div class="row form-row">
-                                <input type="text" placeholder="Enter Full name" class="form-control">
+                                <label for="name">Name</label>
+                                <input type="text" placeholder="Enter Full name" class="form-control" id="name" name="name">
                               </div>
                               <div class="row form-row">
-                                <input type="text" placeholder="Enter Mobile Number" class="form-control">
+                                <input type="text" placeholder="Enter Mobile Number" class="form-control" id="phone" name="phone">
                               </div>
                                <div class="row form-row">
-                                <input type="text" placeholder="Enter Email Adreess" class="form-control">
+                                <input type="text" placeholder="Enter Email Adreess" class="form-control" id="email" name="email">
                               </div>
                              <div class="row form-row">
-                                <input id="dat" type="text" placeholder="Appointment Date" class="form-control">
-                              </div>
-                              
-                              <h6>Address Details</h6>
-  
-                               <div class="row form-row">
-                                  <div class="col-sm-6">
-                                     <input type="text" placeholder="Enter Area" class="form-control">
-                                  </div>
-                                  <div class="col-sm-6">
-                                     <input type="text" placeholder="Enter City" class="form-control">
-                                  </div>
-                              </div>
-                               <div class="row form-row">
-                                  <div class="col-sm-6">
-                                     <input type="text" placeholder="Enter State" class="form-control">
-                                  </div>
-                                  <div class="col-sm-6">
-                                     <input type="text" placeholder="Postal Code" class="form-control">
-                                  </div>
+                                <input type="date" placeholder="Appointment Date" class="form-control" id="date" name="date">
                               </div>
   
                                <div class="row form-row">
-                                 <button class="btn btn-success btn-appointment">
+                                 <button class="btn btn-success btn-appointment" type="submit">
                                    Book Appointment
                                  </button>
                                  
@@ -91,7 +73,7 @@
               </div>
             </div>
         </div>
-    
+    </form>
     <!-- <footer-component></footer-component> -->
 </body>
 

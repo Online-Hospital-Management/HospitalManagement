@@ -2,9 +2,13 @@ const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
 const encoder = bodyParser.urlencoded();
+const cookieParser = require('cookie-parser');
 
 const app = express();
+
 app.use("/assets",express.static("assets"));
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 
 var IsLogged = false;
 
@@ -12,7 +16,7 @@ const connection = mysql.createConnection({
     host     : 'localhost',
 	user     : 'root',
 	password : 'password',
-	database : 'tw_project'
+	database : 'hospital_login'
 });
 
 connection.connect(function(error){
@@ -29,7 +33,7 @@ app.post("/",encoder, function(req,res){
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("select * from accounts where username = ? and password = ?",[username,password],function(error,results,fields){
+    connection.query("select * from loginuser where user_name = ? and user_pass = ?",[username,password],function(error,results,fields){
         if (results.length > 0) {
             res.redirect("/home");
             IsLogged = true;
@@ -63,11 +67,28 @@ app.get("/contact_us", function(req, res){
 app.get("/programare.html", function(req, res){
     res.sendFile(__dirname + "/programare.html");
 })
+app.post('/programare.html', function(req, res) {
+    var name = req.body.name;
+    var phone = req.body.phone;
+    var email = req.body.email;
+    var date = req.body.date;
+   
+    var sql = `INSERT INTO appointments (name, phone, email, app_date) VALUES ("${name}", "${phone}", "${email}", "${date}")`;
+    connection.query(sql, function(err, result) {
+      if (err) throw err;
+      console.log('Appointment succes');
+      res.redirect('/');
+});
+});
 app.get("/programare", function(req, res){
     res.sendFile(__dirname + "/programare.html");
 })
 app.get("/login.html", function(req, res){
     res.sendFile(__dirname + "/login.html");
 })
+app.get("/index.html", function(req, res){
+    res.sendFile(__dirname + "/index.html");
+})
 
 app.listen(4000);
+module.exports = connection;
