@@ -105,6 +105,21 @@ app.get("/login.html", function(req, res){
 app.get("/index.html", function(req, res){
     res.sendFile(__dirname + "/index.html");
 })
+app.get("/pediatric", function(req, res){
+    res.sendFile(__dirname + "/pediatric.html");
+})
+app.get("/neurology", function(req, res){
+    res.sendFile(__dirname + "/neurology.html");
+})
+app.get("/depresion", function(req, res){
+    res.sendFile(__dirname + "/depresion.html");
+})
+app.get("/relationship", function(req, res){
+    res.sendFile(__dirname + "/relationship.html");
+})
+app.get("/anxiety", function(req, res){
+    res.sendFile(__dirname + "/anxiety.html");
+})
 
 app.listen(4000);
 module.exports = connection;
