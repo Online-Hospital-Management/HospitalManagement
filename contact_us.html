@@ -54,32 +54,33 @@
 
 
                 <div style="padding:20px" class="col-sm-7">
-                   <form action="mail.php" method="post"></form>
+                   <form method="post">
                     <h2 >Contact Form</h2> <br>
-                    <div class="row cont-row">
+                    <div class="row cont-row">  
                         <div  class="col-sm-3"><label>Enter Name </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  required></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Email Address </label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="email" id="email" name="name" placeholder="Enter Email Address" class="form-control input-sm"   required></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Mobile Number</label><span>:</span></div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                        <div class="col-sm-8"><input type="text" id="phone" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  required></div>
                     </div>
                     <div  class="row cont-row">
                         <div  class="col-sm-3"><label>Enter Message</label><span>:</span></div>
                         <div class="col-sm-8">
-                            <textarea rows="5" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
+                            <textarea rows="5" id="text" name="text" placeholder="Enter Your Message" class="form-control input-sm" required></textarea>
                         </div>
                     </div>
                     <div style="margin-top:10px;" class="row">
                         <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
                         <div class="col-sm-8">
-                            <button class="btn btn-primary btn-sm">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
                         </div>
                     </div>
+                    </form>
                 </div>
                 <div class="col-sm-5">
 
@@ -134,6 +135,30 @@
             </div>
 
         </div>
+        <!-- Here is a script where we will be collecting data from the form  -->
+    <script>
+        $('form').on('submit', (e) => {
+            // e.preventDefault();
+
+            const name = $('#name').val().trim();
+            const email = $('#email').val().trim();
+            const phone = $('#phone').val().trim();
+            const text = $('#text').val().trim();
+
+            const data = {
+                name,
+                email,
+                phone,
+                text
+            };
+
+            $.post('/contact_us', data, function() {
+                console.log('Server recieved our data');
+            });
+        });
+        // document.getElementById('#form-data').reset();
+    </script>
+
 
 </body>
 
@@ -146,4 +171,9 @@
 <script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
 <script src="assets/js/script.js"></script>
 
+
+
 </html>
+
+
+

@@ -3,12 +3,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const encoder = bodyParser.urlencoded();
 const cookieParser = require('cookie-parser');
+const sendMail = require("./mail");
 
 const app = express();
 
 app.use("/assets",express.static("assets"));
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false})); 
+app.use(express.json());
+
 
 var IsLogged = false;
 
@@ -64,6 +67,19 @@ app.get("/appointments", function(req, res){
 app.get("/contact_us", function(req, res){
     res.sendFile(__dirname + "/contact_us.html");
 })
+app.post('/contact_us', (req, res) => {
+    const { name, email, phone, text } = req.body;
+    console.log('Data:', req.body);
+    sendMail(name, email, phone, text, function(err, data) {
+        if (err) {
+            res.status(500).json({ message: 'Internal Error' });
+        } else {
+            res.status({ message: 'Email sent!!!' });
+        }
+    });
+
+    //res.json({message: 'Message received!'})
+});
 app.get("/programare.html", function(req, res){
     res.sendFile(__dirname + "/programare.html");
 })
